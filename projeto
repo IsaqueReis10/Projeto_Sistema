@@ -1,0 +1,16 @@
+def cadastroNovosUsuarios():
+    novoCadastro = 0
+    cadastroUsuario =[]
+    while novoCadastro != 1:
+        print("Informe o seu Nome completo e seu email de contato!!")
+        nomeCompleto=input("Nome completo: ")
+        email=input("Email: ")
+        cadastroUsuario.append(nomeCompleto+" "+email)
+        novoCadastro= int(input("Digite 0-Para cadastrar um novo usuário ou 1-Para sair: "))
+    return cadastroUsuario
+
+def main():
+    cadastroNovosUsuarios()
+
+if __name__ == "__main__":
+    main()
