@@ -1,0 +1,47 @@
+def exibirCadastroPorOrdemAlfabetica(usuarios):
+    for i in sorted(usuarios, key = usuarios.get, reverse=False):
+        print(i, usuarios[i])
+
+def exibirPorOrdemCadastro(usuarios):
+    print(usuarios)
+
+def cadastroUsuarios(usuarios):
+    escolha=0
+    while escolha!=1:
+        nome=input("Digite seu nome completo: ")
+        email=input("Digite seu e-mail: ")
+        if usuarios.get(nome):
+            print("Ja existe este usuário ",nome)
+        else:
+            usuarios[nome] = email
+        escolha=int(input("Digite 0-Para cadastrar novamente ou 1-Para sair "))
+
+def menu(escolhaMenu,usuarios):
+    print("-----------------Bem Vindo-----------------")
+    print("1- Cadastro Usuario\n2- Exibir cadastros\n3- Exibir cadastros por ordem alfabetica\n4- Buscar Usuarios\n5- Excluir Usuario\n6- Alterar Usuario")
+    escolhaMenu=int(input("Digite qual opção deseja escolher: "))
+    if escolhaMenu ==1:
+        cadastroUsuarios(usuarios)
+    elif escolhaMenu ==2:
+        cadastroUsuarios(usuarios)
+        exibirPorOrdemCadastro(usuarios) 
+    elif escolhaMenu == 3:
+        cadastroUsuarios(usuarios)
+        exibirCadastroPorOrdemAlfabetica(usuarios)
+    elif escolhaMenu == 4:
+        cadastroUsuarios(usuarios)
+        buscaUsuarioNome(usuarios)
+    elif escolhaMenu == 5: 
+        cadastroUsuarios(usuarios)
+        excluirUsuario(usuarios)
+    elif escolhaMenu == 6:
+        cadastroUsuarios(usuarios)
+        alterarNomeUsuario(usuarios)
+
+
+def main():
+    usuarios={}
+    escolhaMenu=0
+    menu(escolhaMenu,usuarios)
+if name == "main":
+    main()
