@@ -1,3 +1,10 @@
+def exibirCadastroPorOrdemAlfabetica(usuarios):
+    for i in sorted(usuarios, key = usuarios.get, reverse=False):
+        print(i, usuarios[i])
+
+def exibirPorOrdemCadastro(usuarios):
+    print(usuarios)
+
 def cadastroUsuarios(usuarios):
     escolha=0
     while escolha!=1:
@@ -22,10 +29,10 @@ def menu(escolhaMenu,usuarios):
         cadastroUsuarios(usuarios)
         exibirCadastroPorOrdemAlfabetica(usuarios)
     elif escolhaMenu == 4:
-        cadastroUsuarios(usuarios)        
+        cadastroUsuarios(usuarios)
         buscaUsuarioNome(usuarios)
     elif escolhaMenu == 5: 
-        cadastroUsuarios(usuarios)   
+        cadastroUsuarios(usuarios)
         excluirUsuario(usuarios)
     elif escolhaMenu == 6:
         cadastroUsuarios(usuarios)
@@ -36,5 +43,5 @@ def main():
     usuarios={}
     escolhaMenu=0
     menu(escolhaMenu,usuarios)
-if __name__ == "__main__":
+if name == "main":
     main()
